@@ -29,7 +29,7 @@ class SandboxActor extends Actor with ActorLogging {
 
 object SandboxApp extends App {
   val latch = new CountDownLatch(1)
-  val system = ActorSystem("BuildNotifierSystem");
+  val system = ActorSystem("Sandbox");
   system.registerOnTermination(latch.countDown())
 
   val supervisor = system.actorOf(Props[SandboxActor]);
